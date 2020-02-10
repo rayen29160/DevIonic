@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>message</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let msg of messages">
+      <ion-text color="primary">
+        <h4>{{msg.message}}</h4>
+      </ion-text>
+      <ion-text color="secondary">
+        <p><i>{{msg.username}}</i></p>
+      </ion-text>
+      <p><i>{{msg.date | date:'HH:mm dd/MM/yyyy'}}</i></p>
+    </ion-item>
+  </ion-list>
+
+
+  <form [formGroup]="Msggroup">
+
+  <!-- Textarea in an item with a floating label -->
+  <ion-item style="position: fixed; bottom: 0; width: 100%;">
+    <ion-label position="floating">Message :</ion-label>
+    <ion-input formControlName="txtchat" required type="url" ></ion-input>
+    <ion-button (click)="sendmessage()">send</ion-button>
+
+  </ion-item>
+  </form>
+
+
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="SignupForm">
+    <ion-item>
+      <ion-label  position="stacked">Id <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="username" required type="text" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Mdp <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="pwd" required type="password" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Mdp <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="urlphoto" required type="url" ></ion-input>
+    </ion-item>
+    <ion-button size="small" (click)="doSignup()" class="ion-no-margin">Go</ion-button>
+  </form>
+
+</ion-content>
